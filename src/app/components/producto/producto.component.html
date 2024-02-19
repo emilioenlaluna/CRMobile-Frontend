@@ -1,1 +1,449 @@
-<p>producto works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CRMobile</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/assets/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="/assets/js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/assets/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/assets/images/favicon.png" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="/dashboard">
+                    <h2  class="display-3 mb-1">CRMobile</h2>
+                </a>
+                <a class="navbar-brand brand-logo-mini" href="/dashboard">
+                    <h2  class="display-5 mb-1">CRM</h2>
+                </a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav mr-lg-2">
+                    <li class="nav-item nav-search d-none d-lg-block">
+                        <div class="input-group">
+                            <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                                <span class="input-group-text" id="search">
+                                    <i class="icon-search"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="navbar-search-input" placeholder="Buscar..."
+                                aria-label="search" aria-describedby="search">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+                            data-toggle="dropdown">
+                            <i class="icon-bell mx-0"></i>
+                            <span class="count"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                            aria-labelledby="notificationDropdown">
+                            <p class="mb-0 font-weight-normal float-left dropdown-header">Notificaciones</p>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-success">
+                                        <i class="ti-info-alt mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject font-weight-normal">Nuevos datos ingresados</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                        Justo ahora
+                                    </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon bg-warning">
+                                        <i class="ti-settings mx-0"></i>
+                                    </div>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject font-weight-normal">Seguridad</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                        Nuevas alertas
+                                    </p>
+                                </div>
+                            </a>
+                           
+                        </div>
+                    </li>
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            <img src="/assets/images/faces/face28.jpg" alt="profile" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="profileDropdown">
+                            <a class="dropdown-item">
+                                <i class="ti-settings text-primary"></i>
+                                Configuracion
+                            </a>
+                            <a class="dropdown-item" href="/">
+                                <i class="ti-power-off text-primary"></i>
+                                Cerrar sesion
+                            </a>
+                        </div>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_settings-panel.html -->
+            <div class="theme-setting-wrapper">
+                <div id="settings-trigger"><i class="ti-settings"></i></div>
+                <div id="theme-settings" class="settings-panel">
+                    <i class="settings-close ti-close"></i>
+                    <p class="settings-heading">Barra de navegacion</p>
+                    <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+                        <div class="img-ss rounded-circle bg-light border mr-3"></div>Blanco
+                    </div>
+                    <div class="sidebar-bg-options" id="sidebar-dark-theme">
+                        <div class="img-ss rounded-circle bg-dark border mr-3"></div>Oscuro
+                    </div>
+                    <p class="settings-heading mt-2">Colores</p>
+                    <div class="color-tiles mx-0 px-4">
+                        <div class="tiles success"></div>
+                        <div class="tiles warning"></div>
+                        <div class="tiles danger"></div>
+                        <div class="tiles info"></div>
+                        <div class="tiles dark"></div>
+                        <div class="tiles default"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="right-sidebar" class="settings-panel">
+                <i class="settings-close ti-close"></i>
+                <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab"
+                            aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab"
+                            aria-controls="chats-section">CHATS</a>
+                    </li>
+                </ul>
+                
+            </div>
+            <!-- partial -->
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Clientes</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="/cliente">Gestionar Clientes</a></li>
+                               
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false"
+                            aria-controls="form-elements">
+                            <i class="icon-columns menu-icon"></i>
+                            <span class="menu-title">Contactos</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="form-elements">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="/contacto">Gestionar contactos</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false"
+                            aria-controls="charts">
+                            <i class="icon-bar-graph menu-icon"></i>
+                            <span class="menu-title">Actvidades</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="charts">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="/actividad">Gestionar actividades</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false"
+                            aria-controls="tables">
+                            <i class="icon-grid-2 menu-icon"></i>
+                            <span class="menu-title">Oficinas</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="tables">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="/oficina">Gestion de oficinas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false"
+                            aria-controls="icons">
+                            <i class="icon-contract menu-icon"></i>
+                            <span class="menu-title">Producto</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="icons">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="/producto">Gestionar Productos</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false"
+                            aria-controls="auth">
+                            <i class="icon-head menu-icon"></i>
+                            <span class="menu-title">Empleados</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="auth">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="/empleado"> Gestionar empleados </a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </li>
+
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-md-12 grid-margin">
+                            <div class="row">
+                                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                                    <h3 class="font-weight-bold">Productos</h3>
+                                    
+                                </div>
+                                <div class="col-12 col-xl-4">
+                                    <div class="justify-content-end d-flex">
+                                        <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
+                                            <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button"
+                                                id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="true">
+                                            19 de febrero
+                                            </button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 
+                    
+
+                    <div class="row">
+                        <div class="col-md-7 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-title mb-0">Productos</p>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th>Producot</th>
+                                                    <th>Precio</th>
+                                                    <th>Fecha</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Search Engine Marketing</td>
+                                                    <td class="font-weight-bold">$362</td>
+                                                    <td>21 Sep 2018</td>
+                                                    <td class="font-weight-medium">
+                                                        <div class="badge badge-success">Completed</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Search Engine Optimization</td>
+                                                    <td class="font-weight-bold">$116</td>
+                                                    <td>13 Jun 2018</td>
+                                                    <td class="font-weight-medium">
+                                                        <div class="badge badge-success">Completed</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Display Advertising</td>
+                                                    <td class="font-weight-bold">$551</td>
+                                                    <td>28 Sep 2018</td>
+                                                    <td class="font-weight-medium">
+                                                        <div class="badge badge-warning">Pending</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Pay Per Click Advertising</td>
+                                                    <td class="font-weight-bold">$523</td>
+                                                    <td>30 Jun 2018</td>
+                                                    <td class="font-weight-medium">
+                                                        <div class="badge badge-warning">Pending</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>E-Mail Marketing</td>
+                                                    <td class="font-weight-bold">$781</td>
+                                                    <td>01 Nov 2018</td>
+                                                    <td class="font-weight-medium">
+                                                        <div class="badge badge-danger">Cancelled</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Referral Marketing</td>
+                                                    <td class="font-weight-bold">$283</td>
+                                                    <td>20 Mar 2018</td>
+                                                    <td class="font-weight-medium">
+                                                        <div class="badge badge-warning">Pending</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Social media marketing</td>
+                                                    <td class="font-weight-bold">$897</td>
+                                                    <td>26 Oct 2018</td>
+                                                    <td class="font-weight-medium">
+                                                        <div class="badge badge-success">Completed</div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                 
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="card-title">Agregar producto</h4>
+                            <p class="card-description">
+                    
+                            </p>
+                            <form class="forms-sample">
+                              <div class="form-group">
+                                <label for="exampleInputName1">Nombre</label>
+                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail3">Precio</label>
+                                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputPassword4">Clave</label>
+                                <input type="text" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleSelectGender">Categoria</label>
+                                  <select class="form-control" id="exampleSelectGender">
+                                    <option>Servicio</option>
+                                    <option>Producto</option>
+                                  </select>
+                                </div>
+                              <div class="form-group">
+                                <label>Imagen</label>
+                                <input type="file" name="img[]" class="file-upload-default">
+                                <div class="input-group col-xs-12">
+                                  <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                                  <span class="input-group-append">
+                                    <button class="file-upload-browse btn btn-primary" type="button">Subir</button>
+                                  </span>
+                                </div>
+                              </div>
+                            
+                              <div class="form-group">
+                                <label for="exampleTextarea1">Descripcion</label>
+                                <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                              </div>
+                              <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                              <button class="btn btn-light">Cancel</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                   
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024.
+                             <a href="#" >CRMobile</a> All rights reserved.</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><i class="ti-heart text-danger ml-1"></i></span>
+                    </div>
+                    
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="/assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="/assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="/assets/vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="/assets/js/dataTables.select.min.js"></script>
+
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="/assets/js/off-canvas.js"></script>
+    <script src="/assets/js/hoverable-collapse.js"></script>
+    <script src="/assets/js/template.js"></script>
+    <script src="/assets/js/settings.js"></script>
+    <script src="/assets/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="/assets/js/dashboard.js"></script>
+    <script src="/assets/js/Chart.roundedBarCharts.js"></script>
+    <!-- End custom js for this page-->
+</body>
+
+</html>

@@ -24,6 +24,7 @@ const routes: Routes = [
   {  path: "oficina", component: OficinaComponent},
   {  path: "producto", component: ProductoComponent},
   {  path: "proveedor", component: ProveedorComponent},
+  {  path: "register", component: RegisterComponent},
   { path: '**', redirectTo: '/404' }, // Wildcard route
   { path: '404', component: NotFoundComponent }, // 404 route
 ];
